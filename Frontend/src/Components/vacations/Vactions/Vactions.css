@@ -1,0 +1,53 @@
+.Vactions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#checkboxInputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#checkboxInputs label {
+    margin-right: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+#checkboxInputs input[type="checkbox"] {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.pagi {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.pagi .pagination {
+    display: flex;
+    justify-content: center;
+}
+
+.pagi .pagination button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 5px 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    flex-shrink: 0; /* Prevent buttons from stretching */
+}
+
+.pagi .pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
