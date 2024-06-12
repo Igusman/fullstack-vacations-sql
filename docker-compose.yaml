@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  database:
+    # container_name: vacations_store.sql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+      - MYSQL_TCP_PORT=3306
+      - MYSQL_DATABASE=Vacations_store
+    ports:
+      - 3306:3306
+    # image: israel545/vacations_store-database:1.0
+    build: ./database 
+    volumes:
+      - vacations_store-database:/var/lib/mysql
+
+  backend:
+    depends_on:
+      - database
+    # container_name: backend
+    ports:
+      - 3010:8082
+    environment:
+      - NODE_ENV=compose
+    build: ./backend
+
+  frontend:
+    depends_on:
+      - backend
+    # container_name: vacations_store-frontend
+    ports:
+      - 3000:80
+    build: ./Frontend
+
+volumes:
+  vacations_store-database:
